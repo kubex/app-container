@@ -10,8 +10,7 @@
     "watch": "rollup -c -w"
   },
   "dependencies": {
-    "lit": "^2.0.0-rc.2",
-    "rollup-plugin-lit-css": "^2.1.0"
+    "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^18.0.0",
