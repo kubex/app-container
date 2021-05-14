@@ -1,11 +1,10 @@
-import {html, LitElement} from 'lit';
+import {html, LitElement, unsafeCSS} from 'lit';
 import {customElement} from 'lit/decorators.js';
-//import {appContainerCss} from './AppContainerCss'
-import appContainerCss from '../scss/container.scss'
+import styles from "../scss/container.scss";
 
 @customElement('app-container')
 export class AppContainer extends LitElement {
-    static styles = appContainerCss;
+    static styles = unsafeCSS(styles);
 
     set innerHTML(data) {
         this.shadowRoot.innerHTML = data;

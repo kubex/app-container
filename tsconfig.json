@@ -2,6 +2,11 @@
   "compilerOptions": {
     "target": "ES6",
     "experimentalDecorators": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   }
 }
