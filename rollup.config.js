@@ -5,21 +5,21 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 
 export default {
-  input:   'src/container.ts',
-  output:  {
-    dir:            'dist',
-    format:         'iife',
-    entryFileNames: 'container.js',
-    sourcemap:      false
+  input: 'src/container.ts',
+  output: {
+    dir: 'dist',
+    format: 'iife',
+    entryFileNames: 'js/container.js',
+    sourcemap: false
   },
   plugins: [
-    resolve(),
+    resolve({browser: true, preferBuiltins: false}),
     typescript(),
     commonjs(),
     postcss(
       {
-        minimize:  true,
-        sourceMap: false
+        minimize: true,
+        sourceMap: false,
       }),
     terser()
   ]
