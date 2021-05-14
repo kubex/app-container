@@ -1,6 +1,7 @@
 import {html, LitElement, unsafeCSS} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import styles from "../scss/container.scss";
+// @ts-ignore
+import styles from '../scss/container.scss';
 
 @customElement('app-container')
 export class AppContainer extends LitElement {
