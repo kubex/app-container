@@ -9,7 +9,7 @@ export default {
   output:  {
     dir:            'dist',
     format:         'iife',
-    entryFileNames: 'js/container.js',
+    entryFileNames: 'container.js',
     sourcemap:      false
   },
   plugins: [
