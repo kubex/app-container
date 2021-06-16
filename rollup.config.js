@@ -4,7 +4,29 @@ import {terser} from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 
-export default {
+const fusion = {
+  input:   'node_modules/@packaged-ui/fusion/fusion.js',
+  output:  {
+    dir:            'build',
+    format:         'iife',
+    entryFileNames: 'fusion.js',
+    sourcemap:      false
+  },
+  plugins: [
+    resolve({browser: true, preferBuiltins: false}),
+    typescript(),
+    commonjs(),
+    postcss(
+      {
+        extract:true,
+        minimize:  true,
+        sourceMap: false,
+      }),
+    terser()
+  ]
+}
+
+const container = {
   input:   'src/container.ts',
   output:  {
     dir:            'dist',
@@ -24,3 +46,4 @@ export default {
     terser()
   ]
 };
+export default [fusion,container];
