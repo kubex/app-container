@@ -1,7 +1,7 @@
 {
   "name": "@kubex/app-container",
   "license": "MIT",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "",
   "keywords": [],
   "main": "index.js",
