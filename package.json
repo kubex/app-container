@@ -15,7 +15,8 @@
     "/README.md"
   ],
   "dependencies": {
-    "lit": "^2.0.0-rc.2"
+    "lit": "^2.0.0-rc.2",
+    "uikit": "^3.6.23-dev.5637d5e62"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^18.0.0",

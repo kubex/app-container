@@ -174,3 +174,9 @@
   line-height: 54px;
   margin: 1px 1px 0 1px;
 }
+
+//Import default variables and available mixins.
+@import "node_modules/uikit/src/scss/variables-theme.scss";
+@import "node_modules/uikit/src/scss/mixins-theme.scss";
+// Import UIkit.
+@import "node_modules/uikit/src/scss/uikit-theme.scss";
