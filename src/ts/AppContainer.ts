@@ -7,10 +7,9 @@ import fusionStyles from '../../build/fusion.css';
 
 @customElement('app-container')
 export class AppContainer extends LitElement {
-    static styles = unsafeCSS(styles + fusionStyles);
 
     set innerHTML(data) {
-        this.shadowRoot.innerHTML = data;
+        this.shadowRoot.innerHTML = unsafeCSS(styles + fusionStyles) + data;
     }
 
     render() {
