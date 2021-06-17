@@ -2,14 +2,12 @@ import {html, LitElement, unsafeCSS} from 'lit';
 import {customElement} from 'lit/decorators.js';
 // @ts-ignore
 import styles from '../scss/container.scss';
-// @ts-ignore
-import fusionStyles from '../../build/fusion.css';
 
 @customElement('app-container')
 export class AppContainer extends LitElement {
 
     set innerHTML(data) {
-        this.shadowRoot.innerHTML = unsafeCSS(styles + fusionStyles) + data;
+        this.shadowRoot.innerHTML = unsafeCSS(styles) + data;
     }
 
     render() {

@@ -3,6 +3,7 @@ import typescript from '@rollup/plugin-typescript';
 import {terser} from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
+import AtImport from "postcss-import";
 
 const fusion = {
   input:   'node_modules/@packaged-ui/fusion/fusion.js',
@@ -40,10 +41,11 @@ const container = {
     commonjs(),
     postcss(
       {
-        minimize:  true,
+        plugins: [AtImport()],
+        minimize: true,
         sourceMap: false,
       }),
     terser()
   ]
 };
-export default [fusion,container];
+export default [fusion, container];
