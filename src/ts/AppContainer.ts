@@ -5,9 +5,12 @@ import styles from '../scss/container.scss';
 
 @customElement('app-container')
 export class AppContainer extends LitElement {
+    static get styles() {
+        return unsafeCSS(styles);
+    }
 
     set innerHTML(data) {
-        this.shadowRoot.innerHTML = unsafeCSS(styles) + data;
+        this.shadowRoot.innerHTML = data;
     }
 
     render() {

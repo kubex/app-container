@@ -4,7 +4,7 @@
   "version": "1.2.2",
   "description": "",
   "keywords": [],
-  "main": "index.js",
+  "main": "src/container.ts",
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w"
@@ -15,7 +15,7 @@
     "/README.md"
   ],
   "dependencies": {
-    "@packaged-ui/fusion": "^2.2.4",
+    "@packaged-ui/fusion": "^2.2.5",
     "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {
