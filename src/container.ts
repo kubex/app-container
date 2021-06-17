@@ -3,5 +3,5 @@
 //import './scss/container.scss';
 
 
-import "./ts/AppContainer";
-import "@packaged-ui/fusion"
+import './ts/AppContainer';
+import '@packaged-ui/fusion';
