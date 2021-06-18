@@ -10,7 +10,7 @@ export class AppContainer extends LitElement {
     }
 
     set innerHTML(data) {
-        this.shadowRoot.innerHTML = data;
+        this.shadowRoot.innerHTML = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">" + data;
     }
 
     render() {
