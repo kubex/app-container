@@ -32,7 +32,6 @@ export class AppContainer extends LitElement {
         }
         // @ts-ignore
         this.container.createRange = function () {
-            console.log('cr',arguments);
             return document.createRange.apply(document, [...arguments]);
         }
         // @ts-ignore
