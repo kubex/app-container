@@ -4,4 +4,3 @@
 
 
 import './ts/AppContainer';
-import '@packaged-ui/fusion';
