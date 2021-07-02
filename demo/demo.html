@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body, html {
+      height:          100%;
+      margin:          0;
+      padding:         0;
+      transform-style: preserve-3d;
+    }
+
+    #container {
+      position: absolute;
+      top:      20%;
+      right:    20%;
+      bottom:   20%;
+      left:     20%;
+      border:   2px solid dimgrey;
+      z-index:  123
+    }
+
+    #btn {
+      position: relative;
+      z-index:  321;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">Unstyled button</button>
+
+<app-container id="container" allow-scripts></app-container>
+
+<script src="../dist/container.js" type="text/javascript"></script>
+<script>
+  fetch('./inject.html')
+    .then(r => r.text())
+    .then(
+      (body) =>
+      {
+        document.getElementById('container').innerHTML = body;
+      });
+</script>
+</body>
+</html>

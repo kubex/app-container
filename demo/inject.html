@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inject content</title>
+  <script src="../build/fusion.js"></script>
+  <link rel="stylesheet" href="../build/fusion.css"/>
+</head>
+<body>
+<button modal-launcher="test-modal">Modal Button</button>
+<div id="test-modal"><h1 class="bigred">Modal</h1> </div>
+<div class="tiles tiles--grid" data-action-count="0" data-property-count="1">
+  <div
+    class="tile tile--no-avatar tile--no-label tile--has-title tile--no-description indigo tile--has-properties tile--no-actions">
+    <div class="tile__primary">
+      <div class="tile__head">
+        <div class="text">
+          <div class="tile__title"><span class="material-icons">face</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tile__properties">
+      <div class="tile__property"><p class="tile__value" title="value">value</p>
+        <p class="tile__label" title="Label">label</p></div>
+    </div>
+  </div>
+  <div
+    class="tile tile--no-avatar tile--no-label tile--has-title tile--no-description indigo tile--has-properties tile--no-actions">
+    <div class="tile__primary">
+      <div class="tile__head">
+        <div class="text">
+          <div class="tile__title">Tile 2</div>
+        </div>
+      </div>
+    </div>
+    <div class="tile__properties">
+      <div class="tile__property"><p class="tile__value" title="value">value</p>
+        <p class="tile__label" title="Label">label</p></div>
+    </div>
+  </div>
+  <div
+    class="tile tile--no-avatar tile--no-label tile--has-title tile--no-description indigo tile--has-properties tile--no-actions">
+    <div class="tile__primary">
+      <div class="tile__head">
+        <div class="text">
+          <div class="tile__title">Tile 3</div>
+        </div>
+      </div>
+    </div>
+    <div class="tile__properties">
+      <div class="tile__property"><p class="tile__value" title="value">value</p>
+        <p class="tile__label" title="Label">label</p></div>
+    </div>
+  </div>
+  <div
+    class="tile tile--no-avatar tile--no-label tile--has-title tile--no-description indigo tile--no-properties tile--no-actions">
+    <div class="tile__primary">
+      <div class="tile__head">
+        <div class="text">
+          <div class="tile__title">Tile 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="tile tile--no-avatar tile--no-label tile--has-title tile--no-description indigo tile--no-properties tile--no-actions">
+    <div class="tile__primary">
+      <div class="tile__head">
+        <div class="text">
+          <div class="tile__title">Tile 5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="./inject.js"></script>
+<script>
+  document.querySelector('button').style.background = 'red';
+</script>
+<style>
+  .bigred{font-size: 30px; color: red; background: darkred;}
+</style>
+</body>
+</html>
