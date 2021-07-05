@@ -69,7 +69,7 @@ export class AppContainer extends LitElement {
 
     set innerHTML(data) {
         this.shadowRoot.innerHTML = '';
-        this.container.innerHTML = '';
+        this.container = document.createElement('div');
         this.shadowRoot.append(this.container);
         const cont = document.createElement('div');
         cont.setAttribute('id', 'app__content');
