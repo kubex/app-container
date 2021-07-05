@@ -79,14 +79,7 @@ export class AppContainer extends LitElement {
         const scripts = this.shadowRoot.querySelectorAll('script');
         scripts.forEach((script) => {
             if (script.matches('[src]')) {
-                fetch(script.getAttribute('src'))
-                    .then(response => response.text())
-                    .then((body) => {
-                        this._evalCode(body, script.getAttribute('src'))
-                    })
-                    .catch(e => {
-                        console.error('failed to fetch script', e);
-                    });
+                this._evalScript(script);
             } else {
                 this._evalCode(script.innerHTML)
             }
@@ -100,6 +93,15 @@ export class AppContainer extends LitElement {
         } catch (e) {
             console.error(e, src, fn);
         }
+    }
+
+    private _evalScript(script: HTMLOrSVGScriptElement) {
+        fetch(script.getAttribute('src'))
+            .then(response => response.text())
+            .then((body) => this._evalCode(body, script.getAttribute('src')))
+            .catch(e => {
+                console.error('failed to fetch script', e);
+            });
     }
 
     render() {
