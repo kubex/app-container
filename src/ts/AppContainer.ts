@@ -2,7 +2,9 @@ import {html, LitElement, unsafeCSS} from 'lit';
 import {property} from 'lit/decorators.js';
 // @ts-ignore
 import styles from '../scss/container.scss';
+import '../../build/fusion';
 
+const currScript: HTMLOrSVGScriptElement = document.currentScript;
 
 export class AppContainer extends LitElement {
     @property({type: Boolean, attribute: 'allow-scripts'})
@@ -65,6 +67,10 @@ export class AppContainer extends LitElement {
         this.shadowRoot.innerHTML = '';
         this.shadowRoot.append(this.container);
         this.container.innerHTML = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons+Outlined\" rel=\"stylesheet\">" + data;
+
+        if (currScript) {
+            this._evalScript(currScript);
+        }
 
         if (!this.allowScripts) {
             return;
