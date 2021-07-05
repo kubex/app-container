@@ -18,43 +18,49 @@ export class AppContainer extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
-        const container = this.container;
+        this._reset();
+    }
+
+    _reset() {
+        const container = this.container = document.createElement('div')
+        this.shadowRoot.innerHTML = '';
+        this.shadowRoot.append(container);
 
         // @ts-ignore
-        this.container.createElement = function () {
+        container.createElement = function () {
             return document.createElement.apply(document, [...arguments]);
         }
         // @ts-ignore
-        this.container.createDocumentFragment = function () {
+        container.createDocumentFragment = function () {
             return document.createDocumentFragment.apply(document, [...arguments]);
         }
         // @ts-ignore
-        this.container.createTextNode = function () {
+        container.createTextNode = function () {
             return document.createTextNode.apply(document, [...arguments]);
         }
         // @ts-ignore
-        this.container.createRange = function () {
+        container.createRange = function () {
             return document.createRange.apply(document, [...arguments]);
         }
         // @ts-ignore
-        this.container.createTreeWalker = function () {
+        container.createTreeWalker = function () {
             return document.createTreeWalker.apply(document, [...arguments]);
         }
         // @ts-ignore
-        this.container.getElementsByTagName = function (name) {
+        container.getElementsByTagName = function (name) {
             return container.querySelectorAll(name);
         }
         // @ts-ignore
-        this.container.getElementsByClassName = function (name) {
+        container.getElementsByClassName = function (name) {
             return container.querySelectorAll('.' + name);
         }
         // @ts-ignore
-        this.container.getElementById = function (name) {
+        container.getElementById = function (name) {
             return container.querySelector('#' + name);
         }
-        const oldQuerySelector = this.container.querySelector;
+        const oldQuerySelector = container.querySelector;
         // @ts-ignore
-        this.container.querySelector = function (name) {
+        container.querySelector = function (name) {
             if (name === 'head' || name === 'body' || name === 'html') {
                 return container;
             }
@@ -62,15 +68,13 @@ export class AppContainer extends LitElement {
         }
 
         // @ts-ignore
-        this.container.body = this.container;
+        container.body = container;
         // @ts-ignore
-        this.container.head = this.container;
+        container.head = container;
     }
 
     set innerHTML(data) {
-        this.shadowRoot.innerHTML = '';
-        this.container = document.createElement('div');
-        this.shadowRoot.append(this.container);
+        this._reset();
         const cont = document.createElement('div');
         cont.setAttribute('id', 'app__content');
         cont.innerHTML = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons+Outlined\" rel=\"stylesheet\">" + data;
