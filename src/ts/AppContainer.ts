@@ -1,9 +1,9 @@
 import {html, LitElement, unsafeCSS} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {property} from 'lit/decorators.js';
 // @ts-ignore
 import styles from '../scss/container.scss';
 
-@customElement('app-container')
+
 export class AppContainer extends LitElement {
     @property({type: Boolean, attribute: 'allow-scripts'})
     private allowScripts: boolean = false;
@@ -108,3 +108,5 @@ export class AppContainer extends LitElement {
           </slot>`;
     }
 }
+
+customElements.get('app-container') || customElements.define('app-container', AppContainer);
