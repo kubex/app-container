@@ -37,6 +37,10 @@ export class AppContainer extends LitElement {
             return document.createRange.apply(document, [...arguments]);
         }
         // @ts-ignore
+        this.container.createTreeWalker = function () {
+            return document.createTreeWalker.apply(document, [...arguments]);
+        }
+        // @ts-ignore
         this.container.getElementsByTagName = function (name) {
             return container.querySelectorAll(name);
         }

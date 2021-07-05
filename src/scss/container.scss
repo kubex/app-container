@@ -6,6 +6,10 @@
   color: #555;
 }
 
+#app__content {
+  transform: translateZ(0);
+}
+
 .page-loading {
   display: flex;
   justify-content: center;
