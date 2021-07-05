@@ -70,7 +70,10 @@ export class AppContainer extends LitElement {
     set innerHTML(data) {
         this.shadowRoot.innerHTML = '';
         this.shadowRoot.append(this.container);
-        this.container.innerHTML = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons+Outlined\" rel=\"stylesheet\">" + data;
+        const cont = document.createElement('div');
+        cont.setAttribute('id', 'app__content');
+        cont.innerHTML = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons+Outlined\" rel=\"stylesheet\">" + data;
+        this.container.append(cont);
 
         if (currScript) {
             this._evalScript(currScript);
