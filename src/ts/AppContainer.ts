@@ -3,6 +3,7 @@ import {property} from 'lit/decorators.js';
 // @ts-ignore
 import styles from '../scss/container.scss';
 import '../../build/fusion';
+import '../../build/form';
 
 const currScript: HTMLOrSVGScriptElement = document.currentScript;
 
@@ -130,3 +131,16 @@ export class AppContainer extends LitElement {
 }
 
 customElements.get('app-container') || customElements.define('app-container', AppContainer);
+
+document.addEventListener('submit', function (e) {
+    // @ts-ignore
+    if (!e.composed && e.path) {
+        e.preventDefault()
+        // @ts-ignore
+        e.path[0].dispatchEvent(new CustomEvent("submit", {
+            bubbles: true,
+            composed: true,
+            cancelable: true,
+        }))
+    }
+})

@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "@packaged-ui/fusion": "^2.3",
+    "@packaged/form": "^3.6",
     "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {

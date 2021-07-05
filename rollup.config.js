@@ -28,6 +28,28 @@ const fusion = {
   ]
 }
 
+const form = {
+  input:   'node_modules/@packaged/form/index.js',
+  output:  {
+    dir:            'build',
+    format:         'iife',
+    entryFileNames: 'form.js',
+    sourcemap:      false
+  },
+  plugins: [
+    resolve({browser: true, preferBuiltins: false}),
+    typescript(),
+    commonjs(),
+    postcss(
+      {
+        extract:   true,
+        minimize:  false,
+        sourceMap: false,
+      }),
+    terser()
+  ]
+}
+
 const container = {
   input: 'src/container.ts',
   output: {
@@ -52,4 +74,4 @@ const container = {
   ]
 };
 
-export default [fusion, container];
+export default [fusion,form, container];
