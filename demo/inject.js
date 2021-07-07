@@ -1,1 +1,1 @@
-alert('foo');
+console.log('injected script file')
