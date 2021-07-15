@@ -22,15 +22,13 @@ export class AppContainer extends LitElement {
 
     _reset() {
         this.shadowRoot.innerHTML = '';
+        this.container.innerHTML = '';
         this.shadowRoot.append(this.container);
     }
 
     set innerHTML(data) {
         this._reset();
-        const cont = document.createElement('div');
-        cont.setAttribute('id', 'app__content');
-        cont.innerHTML = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons+Outlined\" rel=\"stylesheet\">" + data;
-        this.container.append(cont);
+        this.container.innerHTML = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">' + data;
 
         if (!this.allowScripts) {
             return;
