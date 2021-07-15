@@ -1,11 +1,8 @@
 import {html, LitElement, unsafeCSS} from 'lit';
 import {property} from 'lit/decorators.js';
 // @ts-ignore
-import styles from '../scss/container.scss';
-import '../../build/fusion';
-import '../../build/form';
-
-const currScript: HTMLOrSVGScriptElement = document.currentScript;
+import styles from '../../build/internal.css';
+import {FusionUi} from '../../build/internal.js';
 
 export class AppContainer extends LitElement {
     @property({type: Boolean, attribute: 'allow-scripts'})
@@ -19,59 +16,13 @@ export class AppContainer extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
+        FusionUi.init(this.container);
         this._reset();
     }
 
     _reset() {
-        const container = this.container = document.createElement('div')
         this.shadowRoot.innerHTML = '';
-        this.shadowRoot.append(container);
-
-        // @ts-ignore
-        container.createElement = function () {
-            return document.createElement.apply(document, [...arguments]);
-        }
-        // @ts-ignore
-        container.createDocumentFragment = function () {
-            return document.createDocumentFragment.apply(document, [...arguments]);
-        }
-        // @ts-ignore
-        container.createTextNode = function () {
-            return document.createTextNode.apply(document, [...arguments]);
-        }
-        // @ts-ignore
-        container.createRange = function () {
-            return document.createRange.apply(document, [...arguments]);
-        }
-        // @ts-ignore
-        container.createTreeWalker = function () {
-            return document.createTreeWalker.apply(document, [...arguments]);
-        }
-        // @ts-ignore
-        container.getElementsByTagName = function (name) {
-            return container.querySelectorAll(name);
-        }
-        // @ts-ignore
-        container.getElementsByClassName = function (name) {
-            return container.querySelectorAll('.' + name);
-        }
-        // @ts-ignore
-        container.getElementById = function (name) {
-            return container.querySelector('#' + name);
-        }
-        const oldQuerySelector = container.querySelector;
-        // @ts-ignore
-        container.querySelector = function (name) {
-            if (name === 'head' || name === 'body' || name === 'html') {
-                return container;
-            }
-            return oldQuerySelector.apply(container, [...arguments]);
-        }
-
-        // @ts-ignore
-        container.body = container;
-        // @ts-ignore
-        container.head = container;
+        this.shadowRoot.append(this.container);
     }
 
     set innerHTML(data) {
@@ -81,15 +32,11 @@ export class AppContainer extends LitElement {
         cont.innerHTML = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons+Outlined\" rel=\"stylesheet\">" + data;
         this.container.append(cont);
 
-        if (currScript) {
-            this._evalScript(currScript);
-        }
-
         if (!this.allowScripts) {
             return;
         }
 
-        const scripts = this.shadowRoot.querySelectorAll('script');
+        const scripts = this.container.querySelectorAll('script');
         scripts.forEach((script) => {
             if (script.matches('[src]')) {
                 this._evalScript(script);

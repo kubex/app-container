@@ -4,15 +4,16 @@ import {terser} from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import AtImport from "postcss-import";
+import inject from '@rollup/plugin-inject';
 
-// this will build fusion so we can import the full css within the app container scss
-const fusion = {
-  input: 'node_modules/@packaged-ui/fusion/fusion.js',
+// this will build internal so we can import the css and js within the app container scope
+const internal = {
+  input: 'src/internal.js',
   output: {
     dir: 'build',
-    format: 'iife',
-    entryFileNames: 'fusion.js',
-    sourcemap: false
+    format: 'es',
+    entryFileNames: 'internal.js',
+    sourcemap: false,
   },
   plugins: [
     resolve({browser: true, preferBuiltins: false}),
@@ -28,30 +29,8 @@ const fusion = {
   ]
 }
 
-const form = {
-  input:   'node_modules/@packaged/form/index.js',
-  output:  {
-    dir:            'build',
-    format:         'iife',
-    entryFileNames: 'form.js',
-    sourcemap:      false
-  },
-  plugins: [
-    resolve({browser: true, preferBuiltins: false}),
-    typescript(),
-    commonjs(),
-    postcss(
-      {
-        extract:   true,
-        minimize:  false,
-        sourceMap: false,
-      }),
-    terser()
-  ]
-}
-
 const container = {
-  input: 'src/container.ts',
+  input: 'src/ts/AppContainer.ts',
   output: {
     dir: 'dist',
     format: 'iife',
@@ -74,4 +53,4 @@ const container = {
   ]
 };
 
-export default [fusion,form, container];
+export default [internal, container];

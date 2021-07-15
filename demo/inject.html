@@ -5,8 +5,14 @@
   <title>Inject content</title>
 </head>
 <body>
+<input type="text">
+
 <button modal-launcher="test-modal">Modal Button</button>
-<div id="test-modal"><h1 class="bigred">Modal</h1></div>
+<div class="modal__content" id="test-modal" modal-class="lightbox">
+  <h1 class="bigred">Modal</h1>
+  <button modal-closer>Close</button>
+</div>
+
 <div class="tiles tiles--grid" data-action-count="0" data-property-count="1">
   <div
     class="tile tile--no-avatar tile--no-label tile--has-title tile--no-description indigo tile--has-properties tile--no-actions">
@@ -72,9 +78,6 @@
   </div>
 </div>
 <script src="./inject.js"></script>
-<script>
-  document.querySelector('button').style.background = 'red';
-</script>
 <style>
   .bigred {font-size: 30px; color: red; background: darkred;}
 </style>
