@@ -16,18 +16,15 @@ export class AppContainer extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
-        FusionUi.init(this.container);
-        this._reset();
-    }
-
-    _reset() {
-        this.shadowRoot.innerHTML = '';
-        this.container.innerHTML = '';
         this.shadowRoot.append(this.container);
+        FusionUi.init(this.shadowRoot);
     }
 
     set innerHTML(data) {
-        this._reset();
+        const slot = this.shadowRoot.getElementById('slot');
+        if (slot) {
+            this.shadowRoot.removeChild(slot);
+        }
         this.container.innerHTML = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">' + data;
 
         if (!this.allowScripts) {
@@ -64,7 +61,7 @@ export class AppContainer extends LitElement {
 
     render() {
         return html`
-          <slot>
+          <slot id="slot">
             <div class="page-loading">
               <div><p>Loading, please wait...</p>
                 <img alt="Loading"
