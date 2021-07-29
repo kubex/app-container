@@ -1,7 +1,7 @@
 import {html, LitElement, unsafeCSS} from 'lit';
 import {property} from 'lit/decorators.js';
 // @ts-ignore
-import styles from '../../build/internal.css';
+import styles from '../scss/container.scss';
 import {FusionUi} from '../../build/internal.js';
 
 export class AppContainer extends LitElement {
@@ -25,7 +25,8 @@ export class AppContainer extends LitElement {
         if (slot) {
             this.shadowRoot.removeChild(slot);
         }
-        this.container.innerHTML = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">' + data;
+        this.container.innerHTML = '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,500&display=swap">'
+            + '<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">' + data;
 
         if (!this.allowScripts) {
             return;
