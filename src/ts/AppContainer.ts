@@ -18,6 +18,19 @@ export class AppContainer extends LitElement {
         super.connectedCallback();
         this.shadowRoot.append(this.container);
         FusionUi.init(this.shadowRoot);
+
+        this.shadowRoot.addEventListener('submit', function (e) {
+            // @ts-ignore
+            if (!e.composed && e.path) {
+                e.preventDefault()
+                // @ts-ignore
+                e.path[0].dispatchEvent(new CustomEvent("submit", {
+                    bubbles: true,
+                    composed: true,
+                    cancelable: true,
+                }))
+            }
+        })
     }
 
     set innerHTML(data) {
@@ -74,18 +87,3 @@ export class AppContainer extends LitElement {
 }
 
 customElements.get('app-container') || customElements.define('app-container', AppContainer);
-
-setTimeout(() => {
-    document.addEventListener('submit', function (e) {
-        // @ts-ignore
-        if (!e.composed && e.path) {
-            e.preventDefault()
-            // @ts-ignore
-            e.path[0].dispatchEvent(new CustomEvent("submit", {
-                bubbles: true,
-                composed: true,
-                cancelable: true,
-            }))
-        }
-    })
-}, 1)
