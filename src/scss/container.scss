@@ -7,11 +7,16 @@
   position: relative;
 }
 
-:host > div {
+:host > div, slot {
+  display: block;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   overflow: visible;
+}
+
+:host > div:empty, slot:empty {
+  display: none;
 }
 
 #app__content {
