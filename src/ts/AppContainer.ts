@@ -7,6 +7,8 @@ import {FusionUi} from '../../build/internal.js';
 export class AppContainer extends LitElement {
     @property({type: Boolean, attribute: 'allow-scripts'})
     private allowScripts: boolean = false;
+    @property({type: Boolean, attribute: 'flex-frame'})
+    private flexFrame: boolean = false;
     @property({type: HTMLDivElement})
     private container: HTMLDivElement = document.createElement('div');
 
@@ -38,9 +40,13 @@ export class AppContainer extends LitElement {
         if (slot) {
             this.shadowRoot.removeChild(slot);
         }
-        this.container.innerHTML = '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,500&display=swap">'
-            + '<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">' + data;
-
+        if (!this.flexFrame) {
+            this.container.innerHTML = '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,500&display=swap">'
+                + '<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">' + data;
+        } else {
+            this.container.innerHTML = data;
+            return;
+        }
         if (!this.allowScripts) {
             return;
         }
