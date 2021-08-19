@@ -18,6 +18,27 @@ export class AppContainer extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
+        const shad = this.shadowRoot;
+        // @ts-ignore
+        this.container.createElement = function (tag) {
+            return document.createElement(tag);
+        };
+        // @ts-ignore
+        this.container.getElementById = function (id) {
+            return shad.querySelector('#' + id);
+        };
+        // @ts-ignore
+        this.container.getElementByClassName = function (className) {
+            return shad.querySelector('.' + className);
+        };
+        // @ts-ignore
+        this.container.getElementsByClassName = function (className) {
+            return shad.querySelectorAll('.' + className);
+        };
+        // @ts-ignore
+        this.container.getElementsByTagName = function (className) {
+            return shad.querySelectorAll(className);
+        };
         this.shadowRoot.append(this.container);
         FusionUi.init(this.shadowRoot);
 
