@@ -3,8 +3,7 @@ import typescript from '@rollup/plugin-typescript';
 import {terser} from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
-import AtImport from "postcss-import";
-import inject from '@rollup/plugin-inject';
+import AtImport from 'postcss-import';
 
 // this will build internal so we can import the css and js within the app container scope
 const internal = {
@@ -25,9 +24,9 @@ const internal = {
         minimize: false,
         sourceMap: false,
       }),
-    terser()
-  ]
-}
+    terser(),
+  ],
+};
 
 const container = {
   input: 'src/ts/AppContainer.ts',
@@ -35,7 +34,7 @@ const container = {
     dir: 'dist',
     format: 'iife',
     entryFileNames: 'container.js',
-    sourcemap: false
+    sourcemap: false,
   },
   plugins: [
     resolve({browser: true, preferBuiltins: false}),
@@ -49,8 +48,8 @@ const container = {
         minimize: true,
         sourceMap: false,
       }),
-    terser()
-  ]
+    terser(),
+  ],
 };
 
 export default [internal, container];
