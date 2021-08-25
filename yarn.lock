@@ -36,8 +36,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kubex/app-container@workspace:."
   dependencies:
-    "@packaged-ui/fusion": 2.9.0
-    "@packaged/form": 3.6.9
+    "@packaged-ui/fusion": 2.9.1
+    "@packaged/form": 4.0.1
     "@rollup/plugin-commonjs": ^18.0.0
     "@rollup/plugin-node-resolve": ^11.2.1
     "@rollup/plugin-typescript": ^8.2.1
@@ -72,16 +72,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@packaged-ui/fusion@npm:2.9.0":
-  version: 2.9.0
-  resolution: "@packaged-ui/fusion@npm:2.9.0"
+"@packaged-ui/fusion@npm:2.9.1":
+  version: 2.9.1
+  resolution: "@packaged-ui/fusion@npm:2.9.1"
   dependencies:
     "@packaged-ui/modal": ^1.6.2
     "@packaged-ui/ready-promise": ^1.0.0
     lodash.debounce: ^4.0.8
     microtip: ^0.2.2
     normalize.css: ^8.0.1
-  checksum: 7d0b6eea64cff050c3457338e0084c23b4bb33a71e270bc0eec5306fd69eb7c99197e8f5f270ad4c951886d9fbcb85e60efc47d60013604326f8b46d003e34c3
+  checksum: fc9cd875f50f9bf4282227617d28dc5960834f0eb754d9f00f9ad7da0aeb6787698d5fab93cced77adbdc9ddb0069ce87520b1da0e7cd0f7791b7f8058c1332d
   languageName: node
   linkType: hard
 
@@ -101,13 +101,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@packaged/form@npm:3.6.9":
-  version: 3.6.9
-  resolution: "@packaged/form@npm:3.6.9"
+"@packaged/form@npm:4.0.1":
+  version: 4.0.1
+  resolution: "@packaged/form@npm:4.0.1"
   dependencies:
     "@packaged/validate": ^2.7.1
     base-64: ^1.0.0
-  checksum: 2c2403aaa4f10f866b8843c40885d6ed4fc2c5afc68c131b9ff69f1f8aba3643d0da866de45681984a212f5fd92df1122b12c38c69b2384190fdef59c12e6eb2
+  checksum: c5f231e3c1391b7ef038724979302a4a05752b3c9c6e7a84e96eba45ef556be9fda5f542f59c313bc4228b5f9be3511cf70b89bfcd0b8be6d428138de84e9759
   languageName: node
   linkType: hard
 

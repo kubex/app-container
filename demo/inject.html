@@ -8,9 +8,13 @@
 <input type="text">
 
 <button modal-launcher="test-modal">Modal Button</button>
-<div class="modal__content" id="test-modal" modal-class="lightbox">
+<div class="modal__content" id="test-modal">
   <h1 class="bigred">Modal</h1>
-  <button modal-closer>Close</button>
+  <form action="#">
+    <input type="text" value="default">
+    <button type="reset" modal-closer>Close</button>
+    <button type="submit">Submit</button>
+  </form>
 </div>
 
 <div class="tiles tiles--grid" data-action-count="0" data-property-count="1">

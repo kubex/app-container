@@ -1,5 +1,6 @@
 import {FusionUi} from '@packaged-ui/fusion';
-import '@packaged/form';
-import '@packaged/form/resources_src/css/styles.js';
+import * as Form from '@packaged/form/js/src/index.js';
+import '@packaged/form/js/src/css/styles.js';
 
+export {Form};
 export {FusionUi};

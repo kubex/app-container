@@ -2,7 +2,7 @@ import {html, LitElement, unsafeCSS} from 'lit';
 import {property} from 'lit/decorators.js';
 // @ts-ignore
 import styles from '../scss/container.scss';
-import {FusionUi} from '../../build/internal.js';
+import {Form, FusionUi} from '../../build/internal.js';
 
 export class AppContainer extends LitElement {
     @property({type: Boolean, attribute: 'allow-scripts'})
@@ -41,6 +41,7 @@ export class AppContainer extends LitElement {
         };
         this.shadowRoot.append(this.container);
         FusionUi.init(this.shadowRoot);
+        Form.init(this.shadowRoot);
 
         this.shadowRoot.addEventListener('submit', function (e) {
             // @ts-ignore
