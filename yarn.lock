@@ -36,7 +36,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kubex/app-container@workspace:."
   dependencies:
-    "@packaged-ui/fusion": 2.9.1
+    "@packaged-ui/fusion": 2.9.2
     "@packaged/form": 4.0.1
     "@rollup/plugin-commonjs": ^18.0.0
     "@rollup/plugin-node-resolve": ^11.2.1
@@ -72,16 +72,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@packaged-ui/fusion@npm:2.9.1":
-  version: 2.9.1
-  resolution: "@packaged-ui/fusion@npm:2.9.1"
+"@packaged-ui/fusion@npm:2.9.2":
+  version: 2.9.2
+  resolution: "@packaged-ui/fusion@npm:2.9.2"
   dependencies:
     "@packaged-ui/modal": ^1.6.2
     "@packaged-ui/ready-promise": ^1.0.0
+    clipboard-polyfill: ^3.0.3
     lodash.debounce: ^4.0.8
     microtip: ^0.2.2
     normalize.css: ^8.0.1
-  checksum: fc9cd875f50f9bf4282227617d28dc5960834f0eb754d9f00f9ad7da0aeb6787698d5fab93cced77adbdc9ddb0069ce87520b1da0e7cd0f7791b7f8058c1332d
+  checksum: 1b23271509675a0f2b6b9a4076ff3d269d474aa99ed34bcf7bfefe1c435129708d9cccf5a67c016a7664b908a83b317fbb187f5337e4ab4916a00cd299bb7517
   languageName: node
   linkType: hard
 
@@ -513,6 +514,13 @@ __metadata:
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
   checksum: 2ac8cd2b2f5ec986a3c743935ec85b07bc174d5421a5efc8017e1f146a1cf5f781ae962618f416352103b32c9cd7e203276e8c28241bbe946160cab16149fb68
+  languageName: node
+  linkType: hard
+
+"clipboard-polyfill@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "clipboard-polyfill@npm:3.0.3"
+  checksum: 735a1006eac8c7bbde64a23f47eb8ce15e8558591dd1a7bffe11f3f17c68fb6aa1d7c459f51e22348c65539d60e3746b15692fbc9b7930b8e14a22c7ce33948d
   languageName: node
   linkType: hard
 

@@ -69,6 +69,10 @@ export class AppContainer extends LitElement {
             this.container.innerHTML = data;
             return;
         }
+
+        // auto-launch lightboxes within app-container
+        this.container.querySelectorAll('.lightbox--auto-launch').forEach(lb => FusionUi.Modal.create(lb).show());
+
         if (!this.allowScripts) {
             return;
         }
