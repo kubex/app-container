@@ -15,8 +15,8 @@
     "/README.md"
   ],
   "dependencies": {
-    "@packaged-ui/fusion": "2.9.2",
-    "@packaged/form": "4.0.1",
+    "@packaged-ui/fusion": "^2.9",
+    "@packaged/form": "^4.0",
     "lit": "2.0.0-rc.3"
   },
   "devDependencies": {

@@ -36,8 +36,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kubex/app-container@workspace:."
   dependencies:
-    "@packaged-ui/fusion": 2.9.2
-    "@packaged/form": 4.0.1
+    "@packaged-ui/fusion": ^2.9
+    "@packaged/form": ^4.0
     "@rollup/plugin-commonjs": ^18.0.0
     "@rollup/plugin-node-resolve": ^11.2.1
     "@rollup/plugin-typescript": ^8.2.1
@@ -72,9 +72,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@packaged-ui/fusion@npm:2.9.2":
-  version: 2.9.2
-  resolution: "@packaged-ui/fusion@npm:2.9.2"
+"@packaged-ui/fusion@npm:^2.9":
+  version: 2.10.1
+  resolution: "@packaged-ui/fusion@npm:2.10.1"
   dependencies:
     "@packaged-ui/modal": ^1.6.2
     "@packaged-ui/ready-promise": ^1.0.0
@@ -82,7 +82,7 @@ __metadata:
     lodash.debounce: ^4.0.8
     microtip: ^0.2.2
     normalize.css: ^8.0.1
-  checksum: 1b23271509675a0f2b6b9a4076ff3d269d474aa99ed34bcf7bfefe1c435129708d9cccf5a67c016a7664b908a83b317fbb187f5337e4ab4916a00cd299bb7517
+  checksum: f40f8146b0d8898bfec081bd50a60de92070abd204592eb383938f92ea263651bbd9d69a28ffe7ea65dc7e23885ecc5b7c00678e752df10ae9700ffe8cfe9f39
   languageName: node
   linkType: hard
 
@@ -102,7 +102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@packaged/form@npm:4.0.1":
+"@packaged/form@npm:^4.0":
   version: 4.0.1
   resolution: "@packaged/form@npm:4.0.1"
   dependencies:
