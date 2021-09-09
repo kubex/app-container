@@ -38,20 +38,20 @@ __metadata:
   dependencies:
     "@packaged-ui/fusion": ^2.10
     "@packaged/form": ^4.0
-    "@rollup/plugin-commonjs": ^18.0.0
-    "@rollup/plugin-node-resolve": ^11.2.1
-    "@rollup/plugin-typescript": ^8.2.1
-    lit: 2.0.0-rc.3
+    "@rollup/plugin-commonjs": ^20.0.0
+    "@rollup/plugin-node-resolve": ^13.0.4
+    "@rollup/plugin-typescript": ^8.2.5
+    lit: ^2.0.0-rc
     normalize.css: ^8.0.1
     npm-run-all: ^4.1.5
-    postcss: ^8.2.10
+    postcss: ^8.3.6
     postcss-import: ^14.0.2
-    rollup: ^2.44.0
-    rollup-plugin-postcss: ^4.0.0
+    rollup: ^2.56.3
+    rollup-plugin-postcss: ^4.0.1
     rollup-plugin-terser: ^7.0.2
-    sass: ^1.32.10
-    tslib: ^2.2.0
-    typescript: ^4.2.4
+    sass: ^1.39.0
+    tslib: ^2.3.1
+    typescript: ^4.4.2
   languageName: unknown
   linkType: soft
 
@@ -73,8 +73,8 @@ __metadata:
   linkType: hard
 
 "@packaged-ui/fusion@npm:^2.10":
-  version: 2.10.2
-  resolution: "@packaged-ui/fusion@npm:2.10.2"
+  version: 2.10.5
+  resolution: "@packaged-ui/fusion@npm:2.10.5"
   dependencies:
     "@packaged-ui/modal": ^1.6.2
     "@packaged-ui/ready-promise": ^1.0.0
@@ -82,7 +82,7 @@ __metadata:
     lodash.debounce: ^4.0.8
     microtip: ^0.2.2
     normalize.css: ^8.0.1
-  checksum: 74e6c19fafc803f3d7b5df34cb0b5d88d97004ddd10c216db1f6a3e6f6bb5c052baa311309a8c6cc87319e7249f950ea6ccef4374a206984b56834d378376fee
+  checksum: a55de87e83dc3a76777fc5f950a304aa1ccd5e049992d307622070077c7c46c1dfc23be90c47fab50ff3e5fb4c085eb4f8a39a25bc9191bcac16c7261b737538
   languageName: node
   linkType: hard
 
@@ -119,9 +119,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-commonjs@npm:^18.0.0":
-  version: 18.1.0
-  resolution: "@rollup/plugin-commonjs@npm:18.1.0"
+"@rollup/plugin-commonjs@npm:^20.0.0":
+  version: 20.0.0
+  resolution: "@rollup/plugin-commonjs@npm:20.0.0"
   dependencies:
     "@rollup/pluginutils": ^3.1.0
     commondir: ^1.0.1
@@ -131,14 +131,14 @@ __metadata:
     magic-string: ^0.25.7
     resolve: ^1.17.0
   peerDependencies:
-    rollup: ^2.30.0
-  checksum: 7bb553119b0dcc1860e1c0b74ccc81b9519f5163c15660649191622e5911c6d3a1b1ecd743c510dcc28b8c88cd6c3df4776131a384719b9502328ff5f30cb8d6
+    rollup: ^2.38.3
+  checksum: fefc4b5ab1509ff64e26dfee3eca2f23cea204bf20f3dc76c616d3aa3faf4b1035166287518a64ba07faaaea1621a0af5b94b8f8199371ca67db905562e7e619
   languageName: node
   linkType: hard
 
-"@rollup/plugin-node-resolve@npm:^11.2.1":
-  version: 11.2.1
-  resolution: "@rollup/plugin-node-resolve@npm:11.2.1"
+"@rollup/plugin-node-resolve@npm:^13.0.4":
+  version: 13.0.4
+  resolution: "@rollup/plugin-node-resolve@npm:13.0.4"
   dependencies:
     "@rollup/pluginutils": ^3.1.0
     "@types/resolve": 1.17.1
@@ -147,12 +147,12 @@ __metadata:
     is-module: ^1.0.0
     resolve: ^1.19.0
   peerDependencies:
-    rollup: ^1.20.0||^2.0.0
-  checksum: 6f3b3ecf9a0596a5db4212984bdeb13bb7612693602407e9457ada075dea5a5f2e4e124c592352cf27066a88b194de9b9a95390149b52cf335d5b5e17b4e265b
+    rollup: ^2.42.0
+  checksum: 9013d3b2c2e5a31be12e74fdf1ade209d3ce8c52cc47c2bb724ba67727efec7275a4e987874c5b6d6a3f9f25c5364df95bfba5b2f8b874a9dbb33c3fcb927731
   languageName: node
   linkType: hard
 
-"@rollup/plugin-typescript@npm:^8.2.1":
+"@rollup/plugin-typescript@npm:^8.2.5":
   version: 8.2.5
   resolution: "@rollup/plugin-typescript@npm:8.2.5"
   dependencies:
@@ -1548,14 +1548,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"lit@npm:2.0.0-rc.3":
-  version: 2.0.0-rc.3
-  resolution: "lit@npm:2.0.0-rc.3"
+"lit@npm:^2.0.0-rc":
+  version: 2.0.0-rc.4
+  resolution: "lit@npm:2.0.0-rc.4"
   dependencies:
     "@lit/reactive-element": ^1.0.0-rc.2
     lit-element: ^3.0.0-rc.2
     lit-html: ^2.0.0-rc.4
-  checksum: 505c39a35aa088b2e29b761f64c2422c6635516f028564a130433d9d6c5f4273f5e460da1ff06c27e2318b36f8c81e58b70457f529bc9ebb88daae0a0af4dc12
+  checksum: 61a5e86576fa42fb6840ef6fb4bb25b6be0b31970182e8b6e1892db61d6043d0d2f01bfce0d1842e232aa30eba381e16951a2b53aedaa178b307e24ceb479974
   languageName: node
   linkType: hard
 
@@ -2502,7 +2502,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.10":
+"postcss@npm:^8.3.6":
   version: 8.3.6
   resolution: "postcss@npm:8.3.6"
   dependencies:
@@ -2642,7 +2642,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"rollup-plugin-postcss@npm:^4.0.0":
+"rollup-plugin-postcss@npm:^4.0.1":
   version: 4.0.1
   resolution: "rollup-plugin-postcss@npm:4.0.1"
   dependencies:
@@ -2688,7 +2688,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.44.0":
+"rollup@npm:^2.56.3":
   version: 2.56.3
   resolution: "rollup@npm:2.56.3"
   dependencies:
@@ -2730,14 +2730,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.32.10":
-  version: 1.38.1
-  resolution: "sass@npm:1.38.1"
+"sass@npm:^1.39.0":
+  version: 1.39.0
+  resolution: "sass@npm:1.39.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
   bin:
     sass: sass.js
-  checksum: e260889fd9163f68b3916fa69f2b7c99d2980e54e8938ac3a74f6d5a4fe4d0c15450871273286f5abdaecd6e218ff70b70e8f32188203ac6a9f08582fd721b3a
+  checksum: 390751da385af1a46775876a44748e1401e9b1664ddeda6841ffe76dc1c14d1949a40b2c5b31beca7a494da11e8283ffcef55c0e581d1979c72177b8721684c2
   languageName: node
   linkType: hard
 
@@ -3124,30 +3124,30 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.2.0":
+"tslib@npm:^2.3.1":
   version: 2.3.1
   resolution: "tslib@npm:2.3.1"
   checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
   languageName: node
   linkType: hard
 
-typescript@^4.2.4:
-  version: 4.3.5
-  resolution: "typescript@npm:4.3.5"
+typescript@^4.4.2:
+  version: 4.4.2
+  resolution: "typescript@npm:4.4.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: bab033b5e2b0790dd35b77fd005df976ef80b8d84fd2c6e63cc31808151875beae9216e5a315fe7068e8499905c3c354248fe83272cdfc13b7705635f0c66c97
+  checksum: 194e08e9d1971d667d6fd1a0554616b7022312a2319d70e81a64e502a265992061ee7817ed9a69b52bbabe7a9b85e7938cb8c11c433e40a516b277f8c4dacd51
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.2.4#~builtin<compat/typescript>":
-  version: 4.3.5
-  resolution: "typescript@patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"
+"typescript@patch:typescript@^4.4.2#~builtin<compat/typescript>":
+  version: 4.4.2
+  resolution: "typescript@patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=32657b"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: bc2c4fdf0f1557fdafe4ef74848c72ebd9c8c60829568248f869121aea2bb20e16649a252431d0acb185ec118143be22bed73d08f64379557810d82756afedde
+  checksum: 3109ae25705746996007161cdd3271857db4f40356b894e34d4cabc216bf9e251f53e0bb6e48df2450b5e3fd948dcbee716a616a4ad4cf7251292025e6163cb1
   languageName: node
   linkType: hard
 
