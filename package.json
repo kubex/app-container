@@ -1,7 +1,7 @@
 {
   "name": "@kubex/app-container",
   "license": "MIT",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "description": "",
   "keywords": [],
   "main": "src/container.ts",
@@ -15,7 +15,7 @@
     "/README.md"
   ],
   "dependencies": {
-    "@packaged-ui/fusion": "^2.10",
+    "@packaged-ui/fusion": "^2.11",
     "@packaged/form": "^4.0",
     "lit": "^2.0.0-rc"
   },

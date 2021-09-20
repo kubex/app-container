@@ -36,7 +36,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kubex/app-container@workspace:."
   dependencies:
-    "@packaged-ui/fusion": ^2.10
+    "@packaged-ui/fusion": ^2.11
     "@packaged/form": ^4.0
     "@rollup/plugin-commonjs": ^20.0.0
     "@rollup/plugin-node-resolve": ^13.0.4
@@ -72,9 +72,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@packaged-ui/fusion@npm:^2.10":
-  version: 2.10.5
-  resolution: "@packaged-ui/fusion@npm:2.10.5"
+"@packaged-ui/fusion@npm:^2.11":
+  version: 2.11.1
+  resolution: "@packaged-ui/fusion@npm:2.11.1"
   dependencies:
     "@packaged-ui/modal": ^1.6.2
     "@packaged-ui/ready-promise": ^1.0.0
@@ -82,7 +82,7 @@ __metadata:
     lodash.debounce: ^4.0.8
     microtip: ^0.2.2
     normalize.css: ^8.0.1
-  checksum: a55de87e83dc3a76777fc5f950a304aa1ccd5e049992d307622070077c7c46c1dfc23be90c47fab50ff3e5fb4c085eb4f8a39a25bc9191bcac16c7261b737538
+  checksum: 3abd5f3296a37630c8535fe7c35d9c1071ee0461bd6591b8fb904555613824c8d6c1f62771899e97bcfba6a4107750170ab9a7f91e41672b809bf94af5ada4fd
   languageName: node
   linkType: hard
 
