@@ -1,4 +1,6 @@
-@import "../../build/internal.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :host, :root {
   display: flex;

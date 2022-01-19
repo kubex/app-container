@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Inject content</title>
-</head>
-<body>
-<input type="text">
-
-<button modal-launcher="test-modal">Modal Button</button>
-<div class="modal__content" id="test-modal">
-  <h1 class="bigred">Modal</h1>
-  <form action="#">
-    <input type="text" value="default">
-    <button type="reset" modal-closer>Close</button>
-    <button type="submit">Submit</button>
-  </form>
-</div>
-
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="bg-white">
   <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
@@ -223,10 +204,3 @@
     </div>
   </div>
 </div>
-
-<script src="./inject.js"></script>
-<style>
-  .bigred {font-size: 30px; color: red; background: darkred;}
-</style>
-</body>
-</html>

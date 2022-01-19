@@ -1,7 +1,7 @@
 import {html, LitElement, unsafeCSS} from 'lit';
 import {property} from 'lit/decorators.js';
 // @ts-ignore
-import styles from '../scss/container.scss';
+import styles from '../../dist/tails.css';
 import {Form, FusionUi} from '../../build/internal.js';
 
 export class AppContainer extends LitElement {
@@ -10,7 +10,12 @@ export class AppContainer extends LitElement {
     @property({type: Boolean, attribute: 'flex-frame'})
     private flexFrame: boolean = false;
     @property({type: HTMLDivElement})
-    private container: HTMLDivElement = document.createElement('div');
+    private container: HTMLDivElement = (() => {
+        const cnt = document.createElement('div');
+        cnt.classList.add('font-sans');
+        cnt.classList.add('text-gray-900');
+        return cnt;
+    })();
 
     static get styles() {
         return unsafeCSS(styles);
@@ -64,7 +69,9 @@ export class AppContainer extends LitElement {
         }
         if (!this.flexFrame) {
             this.container.innerHTML = '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,500&display=swap">'
-                + '<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">' + data;
+                + '<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">'
+                + '<link rel="stylesheet" href="https://rsms.me/inter/inter.css">'
+                + data;
         } else {
             this.container.innerHTML = data;
             return;
