@@ -1,7 +1,7 @@
 import {html, LitElement, unsafeCSS} from 'lit';
 import {property} from 'lit/decorators.js';
 // @ts-ignore
-import styles from '../../dist/tails.css';
+import styles from '../../build/tails.css';
 import {Form, FusionUi} from '../../build/internal.js';
 
 export class AppContainer extends LitElement {
