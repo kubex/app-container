@@ -4,15 +4,16 @@ import {terser} from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import AtImport from 'postcss-import';
+import copy from 'rollup-plugin-copy'
 
 // this will build internal so we can import the css and js within the app container scope
 const internal = {
-  input: 'src/internal.js',
-  output: {
-    dir: 'build',
-    format: 'es',
+  input:   'src/internal.js',
+  output:  {
+    dir:            'build',
+    format:         'es',
     entryFileNames: 'internal.js',
-    sourcemap: false,
+    sourcemap:      false,
   },
   plugins: [
     resolve({browser: true, preferBuiltins: false}),
@@ -20,8 +21,8 @@ const internal = {
     commonjs(),
     postcss(
       {
-        extract: true,
-        minimize: false,
+        extract:   true,
+        minimize:  false,
         sourceMap: false,
       }),
     terser(),
@@ -29,12 +30,12 @@ const internal = {
 };
 
 const container = {
-  input: 'src/ts/AppContainer.ts',
-  output: {
-    dir: 'dist',
-    format: 'iife',
+  input:   'src/ts/AppContainer.ts',
+  output:  {
+    dir:            'dist',
+    format:         'iife',
     entryFileNames: 'container.js',
-    sourcemap: false,
+    sourcemap:      false,
   },
   plugins: [
     resolve({browser: true, preferBuiltins: false}),
@@ -42,13 +43,18 @@ const container = {
     commonjs(),
     postcss(
       {
-        plugins: [AtImport()],
-        inject: false,
-        extract: false,
-        minimize: true,
+        plugins:   [AtImport()],
+        inject:    false,
+        extract:   false,
+        minimize:  true,
         sourceMap: false,
       }),
     terser(),
+    copy({
+           targets: [
+             {src: "dist/container.js", dest: "../rubix/static/compiled/js/"},
+           ]
+         })
   ],
 };
 

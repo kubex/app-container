@@ -3,22 +3,30 @@ import {property} from 'lit/decorators.js';
 // @ts-ignore
 import styles from '../../build/tails.css';
 import {Form, FusionUi} from '../../build/internal.js';
+import {PropertyValues} from "@lit/reactive-element";
 
 export class AppContainer extends LitElement {
     @property({type: Boolean, attribute: 'allow-scripts'})
     private allowScripts: boolean = false;
     @property({type: Boolean, attribute: 'flex-frame'})
     private flexFrame: boolean = false;
+    @property({type: String, attribute: 'dark-mode', reflect: true})
+    public darkMode: string = 'false';
     @property({type: HTMLDivElement})
     private container: HTMLDivElement = (() => {
         const cnt = document.createElement('div');
         cnt.classList.add('font-sans');
-        cnt.classList.add('text-gray-900');
+        cnt.classList.add('text-default');
         return cnt;
     })();
 
     static get styles() {
         return unsafeCSS(styles);
+    }
+
+    update(changedProperties: PropertyValues) {
+        super.update(changedProperties);
+        this.container.classList.toggle('dark', this.darkMode == 'true');
     }
 
     connectedCallback() {
