@@ -63,3 +63,11 @@ iframe.flexframe {
 .text-default {
   @apply text-gray-800 dark:text-gray-200;
 }
+
+.dark.text-default {
+  @apply text-gray-200;
+}
+
+.bg-panel {
+  @apply bg-white dark:bg-zinc-900;
+}
