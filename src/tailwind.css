@@ -69,5 +69,5 @@ iframe.flexframe {
 }
 
 .bg-panel {
-  @apply bg-white dark:bg-zinc-900;
+  @apply bg-white dark:bg-gray-900;
 }
